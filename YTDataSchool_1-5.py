@@ -106,7 +106,7 @@ import pandas as pd
 pd.set_option('display.width', 1000)
 
 movies = pd.read_csv('D:\PyCharmCommunityEdition2017.2.4\PyTests\Pandas\csvFiles\imdb_1000.csv')
-print(movies.describe())  # show descriptive statistics of all numerical columns
+print(movies.describe())  # show descriptive statistics of all numerical columns （count数量统计，包含0、不包含空值NaN；std标准差；1/4、1/2、3/4分位数）
 #        star_rating    duration
 # count   979.000000  979.000000
 # mean      7.889785  120.979571
