@@ -106,7 +106,7 @@ import pandas as pd
 pd.set_option('display.width', 1000)
 
 movies = pd.read_csv('D:\PyCharmCommunityEdition2017.2.4\PyTests\Pandas\csvFiles\imdb_1000.csv')
-print(movies.describe())  # show descriptive statistics of all numerical columns （count数量统计，包含0、不包含空值NaN；std标准差；1/4、1/2、3/4分位数）
+print(movies.describe())  # show descriptive statistics of all numerical columns （若movies.describe(include='all')，则All columns of the input will be included in the output.）（count数量统计，包含0、不包含空值NaN；std标准差；1/4、1/2、3/4分位数）
 #        star_rating    duration
 # count   979.000000  979.000000
 # mean      7.889785  120.979571
@@ -126,7 +126,7 @@ print(movies.dtypes)  # 注意加s
 # duration            int64
 # actors_list        object
 # dtype: object
-print(movies.describe(include=['object', 'float64']))  # describe columns with the type 'object' and 'float64'（include里以列表形式传入类型）
+print(movies.describe(include=['object', 'float64']))  # describe columns with the type 'object' and 'float64'（include里以列表形式传入类型）(unique指独一无二的值的数量；top指出现次数最多的值(the most common value)；fre指top对应的值出现的次数(the most common value's frequency)）
 #         star_rating    title content_rating  genre                                             actors_list
 # count    979.000000      979            976    979                                                     979
 # unique          NaN      975             12     16                                                     969
