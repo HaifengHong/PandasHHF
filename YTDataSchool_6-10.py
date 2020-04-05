@@ -127,7 +127,7 @@ print(ufo.columns)
 # 2. read from csv file only first n rows（read_csv()里传入nrows参数）
 import pandas as pd
 pd.set_option('display.width', 1000)
-ufo = pd.read_csv(r'D:\PyCharmCommunityEdition2017.2.4\PyTests\Pandas\csvFiles\ufo.csv', nrows=3)  # 只读前三行（不包含head）
+ufo = pd.read_csv(r'D:\PyCharmCommunityEdition2017.2.4\PyTests\Pandas\csvFiles\ufo.csv', nrows=3)  # 只读前三行（不算head，但会显示head，类似于head(3)）
 print(ufo)
 #           City  Colors Reported Shape Reported State             Time
 # 0       Ithaca              NaN       TRIANGLE    NY   6/1/1930 22:00
