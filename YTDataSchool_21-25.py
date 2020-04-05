@@ -145,7 +145,7 @@ y = train.Survived  # response/target factor
 ...
 # pd.DataFrame({'PassengerID':test.PassengerID, 'Survived':new_pred_class}).set_index('PassengerID').to_csv('sub.csv')
 
-# bunus tip
+# bonus tip
 train.to_pickle('train.pkl')  # 使用DataFrame的to_pickle属性就可以生成pickle文件对数据进行永久储存
 pd.read_pickle('train.pkl')  # 使用pandas库的pd.read_pickle读取pickle数据
 
