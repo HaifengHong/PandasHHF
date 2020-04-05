@@ -20,7 +20,7 @@ print(ufo[ufo.City.isnull()])
 print(ufo.shape)  # (18241, 5)
 # drop a row if any of its values are missing
 print(ufo.dropna(how='any').shape)  # (2486, 5) 默认how='any'因此可省略 inplace=False
-print(ufo.shape)  # (18241, 5) 原来的未变
+print(ufo.shape)  # (18241, 5) 原来的未变（dropna只是temporary）
 # drop a row if all of its values are missing
 print(ufo.dropna(how='all').shape)  # (18241, 5)
 # drop a row if either 'City' or 'Shape Reported' are missing
