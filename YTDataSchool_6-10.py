@@ -37,7 +37,7 @@ fortune = pd.read_csv(r'D:\PyCharmCommunityEdition2017.2.4\PyTests\Pandas\csvFil
 print(fortune.head())
 
 # sort a Series
-# f1 = fortune.Company.sort_values(ascending=False)  # 按照'Company'列倒序排列
+# f1 = fortune.Company.sort_values(ascending=False)  # 按照'Company'列倒序排列。不影响原对象，但可以通过inplpace影响原对象。
 f1 = fortune['Company'].sort_values(ascending=False)  # 默认升序ascending=True
 print(f1.head())  # 输出'Company' Series
 print(fortune.head())  # 输出保持原序的整个DataFrame
