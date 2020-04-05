@@ -36,7 +36,7 @@ pd.set_option('display.width', 1000)
 fortune = pd.read_csv(r'D:\PyCharmCommunityEdition2017.2.4\PyTests\Pandas\csvFiles\fortune500.csv')
 print(fortune.head())
 
-# sort a Series
+# sort a Series(只输出这个Series）
 # f1 = fortune.Company.sort_values(ascending=False)  # 按照'Company'列倒序排列，不改变原对象。但可以通过inplpace改变原对象。
 f1 = fortune['Company'].sort_values(ascending=False)  # 默认升序ascending=True
 print(f1.head())  # 输出'Company' Series
@@ -46,7 +46,7 @@ print(type(fortune.Company.sort_values()))  # <class 'pandas.core.series.Series'
 f2 = fortune.Company.copy()
 print(f2.sort_values().head())
 
-# sort the DataFrame
+# sort the DataFrame（输出整个DataFrame）
 fortune.sort_values(by='Revenue (in millions)', inplace=True)  # by=可省略
 fortune.sort_values(['Company', 'Revenue (in millions)'], inplace=True)  # 先按Company排序，再按Revenue (in millions)排序
 print(fortune.head())
