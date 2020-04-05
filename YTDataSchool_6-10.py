@@ -90,7 +90,7 @@ print(fo[is_prof])  # 筛选出is_prof中True（即prof >= 20000）对应的行
 
 
 # 输出筛选后的DataFrame的某列
-print(fo.loc[fo['Profit (in millions)'] >= 20000, 'Year'])  # fo.loc[行，列] （若列名是profit，可fo.profit>=20000）
+print(fo.loc[fo['Profit (in millions)'] >= 20000, 'Year'])  # 最佳方法best practice用loc：fo.loc[行（条件），列]。（若列名是profit，可fo.profit>=20000）
 print(fo[fo['Profit (in millions)'] >= 20000].Year)  # dot notation（与上行等效）
 print(fo[fo['Profit (in millions)'] >= 20000]['Year'])  # bracket notation
 
