@@ -150,7 +150,7 @@ print(drink.groupby('continent').beer_servings.mean())  # 注意不是drink.cont
 # Oceania           89.687500
 # South America    175.083333
 # Name: beer_servings, dtype: float64
-print(drink[drink.continent=='Africa'].beer_servings.mean())  # max()/min()
+print(drink[drink.continent=='Africa'].beer_servings.mean())  # max()、min()
 # 61.471698113207545
 
 # agg() allows us to specify multiple aggregation functions at once
