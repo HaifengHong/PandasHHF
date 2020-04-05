@@ -21,7 +21,7 @@ fortune.drop(['Year', 'Rank'], axis=1, inplace=True)
 print(fortune.head())
 
 # 删除行(axis=0) （传入index/axis/inplace）最左侧的0/1/2/3...称为indices/labels
-fortune.drop([0, 1], axis=0, inplace=True)  # 默认axis=0，可以省略
+fortune.drop([0, 1], axis=0, inplace=True)  # 默认axis=0，可以省略。删除之后，indices/labels从2开始。
 # ufo.drop(ufo[ufo['Shape Reported']=='CIRCLE'].index, axis = 0, inplace=True)
 print(fortune.head())
 
