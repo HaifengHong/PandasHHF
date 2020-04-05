@@ -90,7 +90,7 @@ print(drink.dtypes)
 # continent                        object
 # dtype: object
 
-# drink.beer_servings.astype(float)  # 改变之后即throw away，实际上并未改变beer_servings的类型
+# drink.beer_servings.astype(float)  # 改变之后即throw away，实际上并未改变beer_servings的类型（若要改变，则需要像下行一样赋值给beer_servings）
 drink.beer_servings = drink.beer_servings.astype('float')  # beer_servings类型变成float64
 print(drink.dtypes)
 # country                          object
