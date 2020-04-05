@@ -77,6 +77,9 @@ for prof in fo['Profit (in millions)']:
 is_prof = pd.Series(booleans)  # 将booleans转换成Series
 print(is_prof.head())
 
+# 或
+is_prof = fo['Profit (in millions)'] >= 20000
+
 print(fo[is_prof])  # 筛选出is_prof中True（即prof >= 20000）对应的行
 
 # OUTPUT
