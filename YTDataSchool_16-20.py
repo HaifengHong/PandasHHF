@@ -118,7 +118,7 @@ print(people)
 # Albania    30000
 # Andorra     8500
 # Name: population, dtype: int64
-print(drinks.beer_servings * people)
+print(drinks.beer_servings * people)  # 即使beer_servings和people的length不一样也可以相乘
 # Afghanistan                   NaN
 # Albania                 2670000.0
 # Algeria                       NaN
