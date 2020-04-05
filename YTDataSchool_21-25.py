@@ -164,7 +164,7 @@ print(pd.isnull(ufo).head())  # top-level function
 print(ufo.isnull().head())  # method of a DataFrame or a Series
 
 # difference of range index between loc and iloc
-print(ufo.loc[0:4])  # 包含尾
+print(ufo.loc[0:4])  # 包含尾 （同ufo.loc['City':'State']，若不包含尾，则需要写成ufo.loc['City':'Time']，而实际上作者希望指明的是到State列，但却要写Time，这就quite confusing）
 #                    City Colors Reported       ...        State             Time
 # 0                Ithaca             NaN       ...           NY   6/1/1930 22:00
 # 1           Willingboro             NaN       ...           NJ  6/30/1930 20:00
