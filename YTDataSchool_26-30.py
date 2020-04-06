@@ -64,7 +64,7 @@ print(users.loc[users.duplicated(keep=False), :])  # show all duplicated rows
 # 733       44      F      other    60630
 # 805       27      F      other    20009
 # 890       32      M    student    97301
-print(users.drop_duplicates(keep='first').shape)  # (936, 4) keep=first/'last/False (not inplace)
+print(users.drop_duplicates(keep='first').shape)  # (936, 4) keep=first/last/False (not inplace)
 
 # bonus tip
 print(users.duplicated(subset=['age', 'zip_code']).sum())  # 16
