@@ -211,7 +211,7 @@ print(train.head())
 # 4            5         0       3                           Allen, Mr. William Henry    male  35.0      0      0            373450   8.0500   NaN        S
 
 
-# map()
+# map() 针对Series
 train['Sex_num'] = train.Sex.map({'female':0, 'male':1})
 print(train.loc[0:4, ['Sex', 'Sex_num']])
 #       Sex  Sex_num
@@ -222,7 +222,7 @@ print(train.loc[0:4, ['Sex', 'Sex_num']])
 # 4    male        1
 
 
-# apply()
+# apply() 括号里是函数名
 # 对元素
 train['Name_length'] = train.Name.apply(len)  # 注意len后面无()
 print(train.loc[0:4, ['Name', 'Name_length']])
