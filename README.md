@@ -9,7 +9,7 @@ Lesson 3: Select a pandas series from a DataFrame
 
 Lesson 4: Why do some pandas commands end with parentheses (and other commands don't)
 
-Lesson 5: Reanme columns in a pandas DataFrame
+Lesson 5: Rename columns in a pandas DataFrame
 
 
 ### YTDataSchool2_6-10
