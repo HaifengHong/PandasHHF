@@ -99,7 +99,7 @@ print(ufo.Location)
 
 
 
-# Lesson 4: Why do some pandas commands end with parentheses( and other commands don't)
+# Lesson 4: Why do some pandas commands end with parentheses (and other commands don't)
 # methods are actions/action-oriented/verbs and attributes are just like descriptions/nouns about who you are
 
 import pandas as pd
