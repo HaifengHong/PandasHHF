@@ -143,7 +143,7 @@ print(movies.describe(include=['object', 'float64']))  # describe columns with t
 
 
 
-# Lesson 5: Reanme columns in a pandas DataFrame
+# Lesson 5: Rename columns in a pandas DataFrame
 
 import pandas as pd
 
