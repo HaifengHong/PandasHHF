@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+
+import pandas as pd
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_colwidth', 1000)
+
+
+
+
+#   读excel
+data = pd.read_excel(r'D:\PythonCodes\MyPrograms\Pandas\read_excel and to_excel\Weeks and Months星期和月份.xlsx')    # 默认读取第一个sheet，不带{}。第一行是columns
+print(data)
+#      Chinese      周一       周二         周三        周四      周五        周六      周日
+# 0    English  Monday  Tuesday  Wednesday  Thursday  Friday  Saturday  Sunday
+# 1  Numerical       1        2          3         4       5         6       7
+
+dataHN = pd.read_excel(r'D:\PythonCodes\MyPrograms\Pandas\read_excel and to_excel\Weeks and Months星期和月份.xlsx', header=None)    # 第一行不是columns
+print(dataHN)
+#            0       1        2          3         4       5         6       7
+# 0    Chinese      周一       周二         周三        周四      周五        周六      周日
+# 1    English  Monday  Tuesday  Wednesday  Thursday  Friday  Saturday  Sunday
+# 2  Numerical       1        2          3         4       5         6       7
+
+data1 = pd.read_excel(r'D:\PythonCodes\MyPrograms\Pandas\read_excel and to_excel\Weeks and Months星期和月份.xlsx', sheet_name=[0])   # sheet_name=['Weeks星期']等同，都带{}
+print(data1)
+# {0:      Chinese      周一       周二         周三        周四      周五        周六      周日
+# 0    English  Monday  Tuesday  Wednesday  Thursday  Friday  Saturday  Sunday
+# 1  Numerical       1        2          3         4       5         6       7}
+
+data2 = pd.read_excel(r'D:\PythonCodes\MyPrograms\Pandas\read_excel and to_excel\Weeks and Months星期和月份.xlsx', sheet_name=[0, 1])    # 不同sheet间不会自动换行
+print(data2)
+# {0:      Chinese      周一       周二         周三        周四      周五        周六      周日
+# 0    English  Monday  Tuesday  Wednesday  Thursday  Friday  Saturday  Sunday
+# 1  Numerical       1        2          3         4       5         6       7, 1:      Chinese       一月        二月     三月     四月   五月    六月    七月      八月         九月       十月       十一月       十二月
+# 0    English  January  February  March  April  May  June  July  August  September  October  November  December
+# 1  Numerical        1         2      3      4    5     6     7       8          9       10        11        12}
+
+
+
+
+#   写excel
+data = pd.read_excel(r'D:\PythonCodes\MyPrograms\Pandas\read_excel and to_excel\Weeks and Months星期和月份.xlsx')
+data3 = data.loc[:, ['Chinese', '周一', '周三']]
+
+data3.to_excel('Chinese周一周三.xlsx', sheet_name='C一三')   # 带index写入。注意务必带上文件后缀
+# 	Chinese	周一	周三
+# 0	English	Monday	Wednesday
+# 1	Numerical	1	3
+
+data3.to_excel('Chinese周一周三IndexFalse.xlsx', index=False, sheet_name='C一三IndexFalse')   # 不带index写入。注意index是False，不是None
+# Chinese	周一	周三
+# English	Monday	Wednesday
+# Numerical	1	3
+
+data3.to_excel('Chinese周一周三IndexFalseHeaderNone.xlsx', index=False, header=None, sheet_name='C一三IndexFalseHeaderNone')  # 输出没有第一行。
+# English	Monday	Wednesday
+# Numerical	1	3
+
+
+#  以下操作不能实现一次性写入多个sheet的目的，而会依次覆盖前一个，最后只输出最后一个sheet
+data3.to_excel('Chinese周一周三3sheets.xlsx', sheet_name='C一三')
+data3.to_excel('Chinese周一周三3sheets.xlsx', index=False, sheet_name='C一三IndexFalse')
+data3.to_excel('Chinese周一周三3sheets.xlsx', index=False, header=None, sheet_name='C一三IndexFalseHeaderNone')
+# English	Monday	Wednesday
+# Numerical	1	3
